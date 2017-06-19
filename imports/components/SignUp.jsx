@@ -8,7 +8,7 @@ export default class SignUp extends Component {
     e.preventDefault();
     const email = this.refs.email.value;
     const password = this.refs.password.value;
-    const self = this;
+    const { history } = this.props;
 
     // Done client side instead of server so that the user
     // gets logged in on success
@@ -27,7 +27,7 @@ export default class SignUp extends Component {
         `;
         Materialize.toast(toastContent, 4000);
       }else { // user was created
-        self.props.history.push('/books');
+        history.push('/books');
       }
     });
 

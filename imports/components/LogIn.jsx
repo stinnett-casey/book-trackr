@@ -7,8 +7,24 @@ export default class LogIn extends Component {
     e.preventDefault();
     const email = this.refs.email.value;
     const password = this.refs.password.value;
+    const { history } = this.props;
 
-    Meteor.loginWithPassword(email, password);
+    Meteor.loginWithPassword(email, password, function(error){
+      if (error) {
+        const toastContent = `
+          <span 
+            style="font-weight:bold; 
+            color:red; 
+            font-size:1.6em;">
+            ${error.reason}
+          </span>
+        `;
+        Materialize.toast(toastContent, 4000);
+      } else {
+        history.push('/books');
+      }
+    });
+
   }
 
   render() {
