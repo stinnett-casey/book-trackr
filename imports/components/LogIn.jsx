@@ -8,7 +8,7 @@ export default class LogIn extends Component {
     const email = this.refs.email.value;
     const password = this.refs.password.value;
 
-    console.log(Meteor.loginWithPassword(email, password));
+    Meteor.loginWithPassword(email, password);
   }
 
   render() {

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Redirect, withRouter } from 'react-router-dom'
-
+import { Link, withRouter } from 'react-router-dom';
 
 class Header extends Component {
   render() {
@@ -12,6 +11,10 @@ class Header extends Component {
         <li className="tab">
           <Link to={'/stats'}>Stats</Link>
         </li>
+        {Meteor.userId() &&
+          <li className="tab">
+            <Link className="dropdown-button" to={'/logout'}>Account Settings</Link>
+          </li>}
       </ul>
     );
   }
