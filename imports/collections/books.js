@@ -1,7 +1,7 @@
 import { Mongo } from 'meteor/mongo';
 
 Meteor.methods({
-  
+
 });
 
-export default Books = new Mongo.Collection('books');
+export const Books = new Mongo.Collection('books');
