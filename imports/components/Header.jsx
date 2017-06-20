@@ -6,14 +6,14 @@ class Header extends Component {
     return (
       <ul className="tabs tabs-fixed-width z-depth-1">
         <li className="tab">
-          <Link to={'/books'}>Books</Link>
+          <Link id="books-tab" to={'/books'}>Books</Link>
         </li>
         <li className="tab">
-          <Link to={'/stats'}>Stats</Link>
+          <Link id="stats-tab" to={'/stats'}>Stats</Link>
         </li>
         {Meteor.userId() &&
           <li className="tab">
-            <Link to={'/user'}>Account Settings</Link>
+            <Link id="user-tab" to={'/user'}>Account Settings</Link>
           </li>}
       </ul>
     );
