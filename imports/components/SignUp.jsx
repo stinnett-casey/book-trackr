@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Accounts } from 'meteor/accounts-base';
-import { Users } from '../collections/users';
+import { UserBooks } from '../collections/user-books';
 
 export default class SignUp extends Component {
   signup(e){
@@ -27,6 +27,7 @@ export default class SignUp extends Component {
         `;
         Materialize.toast(toastContent, 4000);
       }else { // user was created
+        Meteor.call('users.makeUserBooks', Meteor.userId());
         history.push('/books');
       }
     });
