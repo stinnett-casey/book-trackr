@@ -33,7 +33,7 @@ export default class BookList extends Component {
     }
     if (this.props.categories) {
       return (
-        <ul className="collapsible collection with-header">
+        <ul className="all-books collapsible collection with-header">
           <li className="collection-header">
             <h4>WWG Books</h4>
             <nav>

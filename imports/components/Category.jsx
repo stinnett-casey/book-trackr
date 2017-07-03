@@ -1,14 +1,14 @@
 import React from 'react';
 import Book from './Book';
 
-const Category = (props) => {
+const Category = ({ books, category }) => {
   return (
     <li>
-      <div className="collapsible-header">{ props.category }</div>
+      <div className="collapsible-header"><h5>{ category }</h5></div>
       <div className="collapsible-body">
         <ul className="collection">
-          {props.books.map(book => {
-            <Book book={book} />
+          {books.map(book => {
+            return <Book key={book._id} book={book} />;
           })}
         </ul>
       </div>
