@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export class Book extends Component {
-  render() {
-    return (
-      <div></div>
-    );
-  }
+const Book = ({ book }) => {
+  return(
+    <li className="collection-item book">
+      {/*<div className="title">({book.sku}) {book.title} | {book.author}</div>*/}
+      <div className="title">{book.title}</div>
+    </li>
+  );
 }
+
+export default Book;
