@@ -21,11 +21,3 @@ class Header extends Component {
 }
 
 export default withRouter(Header);
-
-
-
-
-
-
-
-Samantha Sepulveda
